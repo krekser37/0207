@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/8d47bb0470.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Моя страница</title>
+    <style>
+      .fa-solid {
+        background: -webkit-linear-gradient(
+          linear,
+          left top,
+          left bottom,
+          from(#f00),
+          to(#333)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: initial;
+      }
+      .news {
+        background-image: url(./image/I_am_home.jpg);
+        background-size: cover;
+        height: 20rem;
+        background-position: center;
+      }
+      .news-box {
+        margin: auto;
+        max-width: 15rem;
+        height: auto;
+        border: 1px solid #1f75fe;
+        border-radius: 5px;
+        padding: 0.5rem;
+        background-color: rgba(255, 140, 0, 0.55);
+        box-shadow: 0 0 10px 10px rgba(255, 160, 40, 0.45);
+      }
+
+      .my-menu {
+        background-color: #1f75fe;
+      }
+      .my-image {
+        max-height: 300px;
+      }
+      .my-arrow {
+        background-image: url(./image/arrow.svg);
+        width: 40px;
+        height: 40px;
+      }
+      .my-arrow-right {
+        transform: rotate(180deg);
+      }
+      .my-card-text {
+        background-color: rgba(0, 0, 0, 0.3);
+        top: 15%;
+        bottom: 15%;
+        left: 25%;
+        right: 25%;
+      }
+      @media (max-width: 600px) {
+        .my-text {
+          font-size: 0.5rem;
+        }
+        .my-card-text {
+          top: 5%;
+          bottom: 5%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class=""><h2>Разбирали на уроке 30/03/2022</h2></div>
+
+    <div class="container my-5">
+      <div class="row">
+        <div class="col-md-4 p-5">
+          <div class="card text-center border-primary bg-warning py-5">
+            <a href="./traffic_light.html" class="">
+              <i class="fa-solid fa-traffic-light fa-9x"></i
+            ></a>
+          </div>
+        </div>
+        <div class="col-md-4 p-5">
+          <div class="card text-center border-primary bg-warning py-5">
+            <i class="fa-solid fa-robot fa-9x"></i>
+          </div>
+        </div>
+        <div class="col-md-4 p-5">
+          <div class="card text-center border-primary bg-warning py-5">
+            <i class="fa-solid fa-mug-saucer fa-9x"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  block start -->
+    <div class="container-fluid mt-5 news d-flex">
+      <div class="news-box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et porro
+        excepturi, recusandae ducimus architecto nihil impedit omnis magnam hic
+        nesciunt repellat, dolores soluta eum necessitatibus nisi iste! Est,
+        fugiat esse!
+      </div>
+    </div>
+    <!-- Contact block end -->
+    <!-- Contact block start -->
+    <div class="container-fluid">
+      <h2 class="text-center">Связаться с нами</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <h3 class="">Контакты</h3>
+          <h5 class="">Адрес:</h5>
+          <p class="">г. Москва, ул. Академика Скрябина, д. 9, стр. 4</p>
+          <h5 class="">Телефон:</h5>
+          <a href="tel:+74952605289" class="">+7 (495) 260-52-89</a>
+          <h5 class="">E-mail:</h5>
+          <a href="mailto: hotline@eduprof.ru" class="">hotline@eduprof.ru</a>
+          <h5 class="">График работы:</h5>
+          <span class=""
+            >Понедельник - четверг: с 8-30 по 17-15, пятница: с 8-30 по 16-00;
+            обучение по графику в субботу.</span
+          >
+        </div>
+        <div class="col-md-4">
+          <form action="" class="">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Имя" />
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="E-mail" />
+            </div>
+            <div class="form-group">
+              <textarea
+                name=""
+                id=""
+                cols="30"
+                rows="8"
+                class="form-control"
+                placeholder="Сообщение"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-danger" />
+            </div>
+          </form>
+        </div>
+        <!-- Map block start -->
+        <div class="col-md-4" style="width: 100%">
+          <script
+            type="text/javascript"
+            charset="utf-8"
+            async
+            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae90df3a31efd8260118bb0161d3def82cbabfba9788c4e0541110ee49f8ef3b7&amp;width=320&amp;height=339&amp;lang=ru_RU&amp;scroll=true"
+          ></script>
+        </div>
+        <!-- Map block end -->
+      </div>
+    </div>
+    <!-- Contact block end -->
+    <footer class="">
+      <div class="container py-5 text-center">&copy; <script class="">document.write(new Date().getFullYear())</script>  Все права защищены</div>
+    </footer>
+
+    <div class=""><h2>Разбирали на уроке 30/03/2022</h2></div>
+
+
+    <!-- Дополнительный JavaScript; выберите один из двух! -->
+
+    <!-- Вариант 1: пакет jQuery и Bootstrap (включает Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Вариант 2: Отдельные JS для Popper и Bootstrap -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.min.js" integrity="sha384-VHvPCCyXqtD5DqJeNxl2dtTyhF78xXNXdkwX1CZeRusQfRKp+tA7hAShOK/B/fQ2" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

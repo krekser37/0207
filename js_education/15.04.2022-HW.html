@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Цветные квадраты</title>
+    <style>
+      section {
+        display: flex;
+        justify-content: space-around;
+        margin: 100px;
+        padding: 0;
+      }
+      .box {
+        height: 100px;
+        width: 100px;
+        margin: 20px;
+      }
+      .squareBig {
+        height: 200px;
+        width: 200px;
+      }
+      .squareBig {
+        background-color: gray;
+        width: 200px;
+        height: 200px;
+        margin: auto;
+      }
+      .green {
+        background-color: green;
+      }
+      
+    </style>
+  </head>
+  <body>
+    <section>
+      <div >
+        <div style="background-color: red;"
+          class=" box"
+        ></div>
+        <div 
+          class=" box green"
+        ></div>
+        <div style="background-color: blue;"
+          class=" box "
+        ></div>
+      </div>
+      <div class="squareBig"></div>
+    </section>
+    <script>
+      let squares = document.querySelectorAll(".box");
+      let squareBig = document.querySelector(".squareBig");
+
+      for (box of squares) {
+        box.onmousedown = function (e) {
+          box = e.currentTarget;
+          box.style.position = "absolute";
+          box.style.zIndex = 1000;
+
+          //Устанавливаем слушателя на событие mousemove
+          document.addEventListener("mousemove", moveAt);
+
+          //Удаляем слушателя по событию onmouseup
+          box.onmouseup = function () {
+            
+            document.removeEventListener("mousemove", moveAt);
+            box.style.zIndex = 1;
+
+            //Получаем координаты купюр и приемника
+            let box_top = box.getBoundingClientRect().top;
+            let box_left = box.getBoundingClientRect().left;
+            let box_right = box.getBoundingClientRect().right;
+            let box_bottom = box.getBoundingClientRect().bottom;
+            let squareBig_top = squareBig.getBoundingClientRect().top;
+            let squareBig_left = squareBig.getBoundingClientRect().left;
+            let squareBig_right = squareBig.getBoundingClientRect().right;
+            let squareBig_bottom = squareBig.getBoundingClientRect().bottom;
+
+            /*    console.log("square_top" + square_top);
+            console.log("square_left" + square_left);
+            console.log("square_right" + square_right);
+            console.log("square_bottom" + square_bottom);
+            console.log("square_big_top" + square_big_top);
+            console.log("square_big_left" + square_big_left);
+            console.log("square_big_right" + square_big_right);
+            console.log("square_big_bottom" + square_big_bottom); */
+
+            //Проверяем и сопоставляем координаты
+            if (
+              box_top > squareBig_top &&
+              box_left > squareBig_left &&
+              box_right < squareBig_right &&
+              box_bottom < squareBig_bottom
+            ) {
+              box.hidden = true;
+              squareBig.style.backgroundColor = box.style.backgroundColor;
+            }
+          };
+
+          //Движение и позиционирование купюры
+          function moveAt(event) {
+            let x = event.clientX - 50;
+            let y = event.clientY - 50;
+            box.style.top = y + "px";
+            box.style.left = x + "px";
+          }
+          //Отменяем стандартное поведение браузера
+          box.ondragstart = function () {
+            return false;
+          };
+        };
+      }
+    </script>
+
+  </body>
+</html>

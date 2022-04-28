@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Функции</title>
+    <style>
+      body {
+        background-color: bisque;
+        height: 95vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      input {
+        margin: 10px;
+      }
+      button {
+        margin: 20px;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <!--<button onclick="showMessage()">Я кнопка, которая запускает функцию</button> -->
+
+    <input type="text" placeholder="Число 1" id="num1" />
+    <input type="text" placeholder="Число 2" id="num2" />
+
+    <!--     <button onclick="sum()">Сложить (+)</button>
+    <button onclick="mult()">Умножить (*)</button> -->
+
+    <button onclick="calc('+')">Сложить (+)</button>
+    <button onclick="calc('*')">Умножить (*)</button>
+    <button onclick="calc('-')">Вычитание (-)</button>
+    <button onclick="calc('/')">Деление (/)</button>
+
+    <script>
+      let num1 = document.getElementById("num1");
+      let num2 = document.getElementById("num2");
+
+      function calc(operator) {
+        if (operator === "+") {
+          console.log("Результат суммирования: " + (+num1.value + +num2.value));
+        } else if (operator === "*") {
+          console.log("Результат умножения: " + num1.value * num2.value);
+        } else if (operator === "-") {
+          console.log("Результат вычитания: " + (num1.value - num2.value));
+        } else if (operator === "/") {
+          console.log("Результат деления: " + num1.value / num2.value);
+        }
+      }
+
+      /*       function sum() {
+        console.log("Результат суммирования: " + (+num1.value + +num2.value));
+      }
+
+      function mult() {
+        console.log("Результат умножения: " + num1.value * num2.value);
+      } */
+
+      /* function makeBook() { console.log("Хрясь!!!"); } makeBook(); function
+  power(base, exponent) { let result = 1; for (let i = 0; i < exponent; i++) {
+  result *= base; } return result; } console.log(power(2, 10)); function f(x) {
+  return x**2; } console.log(f(-2)); console.log(f(-5)); console.log(f(20)); */
+      /* function showMessage(){ alert("Hello, my friends!") } */
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex box</title>
+    <style class="">
+      html {
+        font-size: 1.5rem;
+      }
+      .box {
+        min-width: 100px;
+        border: 2px solid gray;
+        padding: 1rem;
+      }
+      .container {
+          max-width: 1200px;
+          margin: auto;
+          display: flex;
+          flex-direction: row; 
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">Один</div>
+      <div class="box">Два</div>
+      <div class="box">Три</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каскадность и специфичность</title>
+    <style>
+
+button {
+        color: red;
+      }
+      button {
+        color: blue;
+      }
+          #blue {
+        color: blue;
+      }
+      p {
+        color: green;
+      }
+      .red {
+        color: red;
+      }
+      .blue {
+        color: blue;
+      }
+
+      .btn {
+        font-size: 1.5rem;
+        font-size: clamp(1.5rem, calc(1rem + 3vw), 3rem);
+      }
+    
+
+    </style>
+</head>
+<body>
+    <button class="btn">Привет, я кнопка с синим текстом</button>
+    <p class="red" id="blue">Какого же цвета будет текст параграфа?</p>
+    <div class="red blue">Text</div>
+    <div class="blue red">Text</div>
+
+</body>
+</html>
