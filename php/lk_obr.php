@@ -9,7 +9,14 @@ if ($mysqli == false) {
 } else {
 $inputValue = $_POST['value'];
 $item = $_POST['item'];
+
 $id = $_SESSION['id'];
-$mysqli->query("UPDATE `users` SET `name`=[value-2],`lastname`=[value-3],`Email`=[value-4],`Password`=[value-5] WHERE 1");
+
+$mysqli->query("UPDATE `users` SET `$item` = '$inputValue' WHERE `id` = '$id'");
+
+echo $inputValue;
+echo $item;
+
+$_SESSION[$item] = $inputValue;
 
 }

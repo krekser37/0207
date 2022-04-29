@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тернарный оператор, методы массивов</title>
+  </head>
+  <body>
+    <script>
+      //Тернарный оператор
+      let a = 5;
+      let b = 7;
+      let c;
+
+      /* if (a < b) {
+        c = a;
+      } else {
+        c = b;
+      } */
+
+      a < b ? (c = a) : (c = b);
+      /* console.log(c); */
+
+      //Методы массивов
+      let cars = ["Audi", "Ford", "BMW"];
+      cars[3] = "Opel";
+      /* cars[10] = "Mersedes"; //так делать не надо*/
+      /* cars[cars.length] = "Byd"; */
+
+      //push - Добавляет в конец массива
+      /* cars.push("Aston Martin");
+      cars.push("Opel", "Mersedes", "Aston Martin"); */
+
+      //unshift - Добавляет в начало массива
+      /* cars.unshift("Opel", "Mersedes", "Aston Martin"); */
+
+      //pop - удаляет 1 элемент с конца
+      /* cars.pop();
+
+      let car = cars.pop();
+      console.log(car); */
+      /* console.log(cars); */
+
+      //очищает, но не изменяет длину массива
+      /* delete cars[2]; */
+      /* let some = cars.splice(1, 2);
+      console.log('some: ' + some);
+      console.log('cars: ' + cars); */
+      /*
+      cars.splice(1, 0, "Another car"); //добавляем с начала
+      cars.splice(-1, 0, "Another car"); //добавляем с конца
+
+      cars.reverse(); //изменяем порядок на обратный */
+      /* console.log(cars);
+      console.log(cars.length); */
+
+      let arr = [1, 2, 3, 6, 7, 9, 4];
+
+      //Метод for
+      function addSpecialNumbers(numbers) {
+        let specialNumbers = [];
+        for (let i = 0; i < numbers.length; i++) {
+          if (numbers[i] % 3 == 0) {
+            specialNumbers.push(numbers[i]);
+          }
+        }
+        return specialNumbers;
+      }
+      console.log(addSpecialNumbers(arr));
+
+      //Метод forEach
+      function addSpecialNumbers(numbers) {
+        let specialNumbers = [];
+        numbers.forEach(function (num) {
+          if (num % 3 == 0) {
+            specialNumbers.push(num);
+          }
+        });
+        return specialNumbers;
+      }
+
+      console.log(addSpecialNumbers(arr));
+
+      function addSpecialNumbers(numbers) {
+        let result = numbers.filter(function (num) {
+          if(num % 3 ==0) {
+            return true;
+          }
+         /*  return false; */
+        });
+        return result;
+      }
+      console.log(addSpecialNumbers(arr));
+
+      let arr2 = [77, 2, 4, 6, 7, 9, 5, 1, 3];
+
+/*       function sortArr(numbers) {
+        numbers.sort(function(a, b) {
+          if (a > b) return 1;
+          else return -1;
+        });
+        return numbers;
+      } */
+
+/*       function sortArr(numbers) {
+        numbers.sort(function(a, b) {
+          return a < b ? 1 : -1;
+        });
+        return numbers;
+      } */
+
+/*       function sortArr(numbers) {
+        let copy = [...numbers];
+        copy.sort(function(a, b) {
+          return a < b ? 1 : -1;
+        });
+        return copy;
+      } */
+
+      //Метод slice
+/*       function sortArr(numbers) {
+        function compare (a, b) {
+          return a < b ? 1 : -1;
+        }
+        return numbers.slice().sort(compare);
+      }
+
+      console.log(sortArr(arr2));
+      console.log(arr2); */
+
+      console.log(arr2.reduce(function(acc, num) {
+        return acc + num;
+      }, 0)
+      );
+    
+      let initArr = [1,4,5,8,[2,3,5],88,4,5,[88]];
+
+      function flatArray(array) {
+        return array.flat();
+      }
+console.log(flatArray(initArr));
+
+
+    </script>
+  </body>
+</html>

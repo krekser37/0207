@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Псевдоэлементы</title>
+    <style>
+      blockquote::before {
+        content: open-quote;
+      }
+      blockquote::after {
+        content: close-quote;
+      }
+      .box-1 {
+        border: 4px solid red;
+        width: 8rem;
+        height: 8rem;
+        margin-bottom: 1rem;
+        transform: translate(6.5rem, 0.5rem);
+        transition: width 2s, height 2s, background-color 2s, transform 2s;
+      }
+      .box-1:hover {
+        transform: rotate(180deg);
+        background-color: blue;
+        width: 10rem;
+        height: 10rem;
+      }
+      .box-2 {
+        border: 4px solid red;
+        width: 8rem;
+        height: 8rem;
+        margin-bottom: 1rem;
+        position: relative;
+        transform: translate3d(25rem, 5rem, 15rem);
+        transition: all 4s ease;
+      }
+      .box-2:hover {
+        transform: scale(1.5);
+        background-color: blueviolet;
+      }
+      .box-2::before {
+        content: "";
+        position: absolute;
+        width: 2rem;
+        height: 2rem;
+        background-color: blue;
+        top: 2rem;
+        left: 1rem;
+      }
+      .box-3 {
+        position:relative;
+        border: 4px solid red;
+        width: 20rem;
+        height: 8rem;
+        border-radius: 1rem;
+        overflow: hidden;
+      }
+      .box-3::after{
+          content: "";
+          position: absolute;
+          background-color: red;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transition: all 1.5s ease;
+          transform: translateX(100%);
+          z-index: -1;
+      }
+      .box-3:hover::after {
+          transform: translateX(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box-1"></div>
+    <div class="box-2"></div>
+    <div class="box-3"></div>
+    <div class="box-4"></div>
+    <!--     <blockquote>
+      <p>
+        <span>::before</span>
+        Это основной контент
+        <span>::after</span>
+      </p>
+    </blockquote> -->
+  </body>
+</html>

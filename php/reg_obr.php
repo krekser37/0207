@@ -19,7 +19,7 @@ if ($mysqli == false) {
     if ($result->num_rows !== 0) {
         print("exist");
       } else {
-        $mysqli->query("INSERT INTO `users`(`frist_name`, `last_name`, `Email`, `Password`) VALUES ('$name', '$lastname', '$email', '$password')");
+        $mysqli->query("INSERT INTO `users`(`name`, `lastname`, `email`, `password`) VALUES ('$name', '$lastname', '$email', '$password')");
         print("ok");
     }
     //var_dump($result);

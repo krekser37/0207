@@ -10,12 +10,12 @@ if ($mysqli == false) {
     $email = trim(mb_strtolower($_POST['email']));
     $password = trim($_POST['password']);
 
-    $result = $mysqli->query("SELECT * FROM `users` WHERE `Email` = '$email'");
-    
+    $result = $mysqli->query("SELECT * FROM `users` WHERE `email` = '$email'");
+    /* echo $result; */
     $result = $result->fetch_assoc();
+    /* echo $result; */
     
-    
-    if (password_verify($password, $result['Password'])) {
+    if (password_verify($password, $result['password'])) {
       echo "ok";
       $_SESSION['name'] = $result['name'];
       $_SESSION['lastname'] = $result['lastname'];
@@ -23,6 +23,10 @@ if ($mysqli == false) {
       $_SESSION['id'] = $result['id'];
     } else {
       echo "user_not_found";
+      echo $_SESSION['name'];
+      echo $_SESSION['lastname'];
+      echo $_SESSION['email'];
+      echo $_SESSION['id'];
     }
   }
   ?>

@@ -103,10 +103,12 @@
 
     <script>
       async function sendForm(form) {
-				let response = await fetch("/php/reg_obr.php", {
-					method: "POST",
-					body: new FormData(form),
+        let formData = new FormData(form);
+				let response = await fetch('/php/reg_obr.php', {
+					method: 'POST',
+					body: formData,
 				});
+        console.log(formData);
 				let result = await response.text();
 				if (result == "ok") {
 					alert("Вы успешно зарегистрированы!");

@@ -49,13 +49,13 @@
 		<!-- Строка с именем -->
 		<p>Имя: <span><?php echo $_SESSION['name'] ?></span>
 			<span class="edit-btn">[Изменить]</span>
-			<span class="save-btn" hidden>[Сохранить]</span>
+			<span class="save-btn" hidden data-item="name">[Сохранить]</span>
 			<span class="cancel-btn" hidden>[Отменить]</span>
 		</p>
 		<!-- Строка с фамилией -->
 		<p>Фамилия: <span><?php echo $_SESSION['lastname'] ?></span>
 			<span class="edit-btn">[Изменить]</span>
-			<span class="save-btn" hidden>[Сохранить]</span>
+			<span class="save-btn" hidden data-item="lastname">[Сохранить]</span>
 			<span class="cancel-btn" hidden>[Отменить]</span>
 		</p>
 
@@ -90,12 +90,25 @@
 
 				let formData = new FormData();
 				formData.append("value", newInputValue);
+				console.log(newInputValue);
 				formData.append("item", save_buttons[i].dataset.item);
 
-				let response = await fetch("/php/lk_obr.php", {
+/* 				let response = await fetch("/php/reg_obr.php", {
 					method: "POST",
+					body: new FormData(form),
+				}); */
+
+
+				let response = await fetch('/php/lk_obr.php', {
+					method: 'POST',
 					body: formData,
-				})
+				});
+				console.log("value");
+				console.log(newInputValue);
+				console.log("item");
+				console.log(save_buttons[i].dataset.item);
+				console.log(formData);
+				
 			})
 			//Работаю с кнопкой cancel
 			cancel_buttons[i].addEventListener("click", function() {

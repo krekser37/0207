@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function check(a) {
+        for (let i = 1; i < a.length; i++) {
+          if (a[i] === a[i - 1]) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      console.log(check([-88, 101, 5, 5, 1, 9, -62, 3, 48]) ? "Да" : "Нет");
+    </script>
+  </body>
+</html>
