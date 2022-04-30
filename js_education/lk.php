@@ -74,7 +74,7 @@
 			let inputValue = edit_buttons[i].previousElementSibling.innerText; /* Сохраняю значение инпута, полученное из сессии */
 
 			edit_buttons[i].addEventListener("click", function() {
-				edit_buttons[i].previousElementSibling.innerHTML = `<input type="text" value = "${inputValue}">`; /* Стань инпутом и внутрь кладу значение, полученное  в переменную  inputValue*/
+				edit_buttons[i].previousElementSibling.innerHTML = `<input type="text" value = "${inputValue}">`; /* Стань инпутом и внутрь кладу значение, полученное  в переменную  inputValue*/				
 				save_buttons[i].hidden = false;
 				cancel_buttons[i].hidden = false;
 				edit_buttons[i].hidden = true;
@@ -84,6 +84,7 @@
 			save_buttons[i].addEventListener("click", async () => {
 				let newInputValue = edit_buttons[i].previousElementSibling.firstElementChild.value;
 				edit_buttons[i].previousElementSibling.innerText = newInputValue;
+				inputValue = newInputValue;
 				save_buttons[i].hidden = true;
 				cancel_buttons[i].hidden = true;
 				edit_buttons[i].hidden = false;
