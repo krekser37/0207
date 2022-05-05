@@ -20,7 +20,7 @@ if ($mysqli == false) {
       $_SESSION['name'] = $result['name'];
       $_SESSION['lastname'] = $result['lastname'];
       $_SESSION['email'] = $result['email'];
-      $_SESSION['id'] = $result['id'];
+      $_SESSION['id'] = $result['id']; 
     } else {
       echo "user_not_found";
       echo $_SESSION['name'];
